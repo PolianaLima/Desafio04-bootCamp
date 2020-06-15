@@ -18,7 +18,7 @@ const actWait = async (amount = 0) => {
   });
 };
 
-const repositoryId = 'd6e43105-a559-45b7-8fd7-53416b415741';
+const  repositoryId = 'd6e43105-a559-45b7-8fd7-53416b415741';
 
 apiMock.onGet("repositories").reply(200, [
   {
@@ -61,8 +61,7 @@ describe("Likes", () => {
 
     await actWait();
 
-    fireEvent.press(getByTestId(`like-button-${repositoryId}`));
-
+    fireEvent.press(getByTestId(`like-button-1${repositoryId}`));
     await actWait();
 
     expect(getByTestId(`repository-likes-${repositoryId}`)).toHaveTextContent("1 curtida");
@@ -77,7 +76,7 @@ describe("Likes", () => {
         likes: 2,
       });
 
-    fireEvent.press(getByTestId(`like-button-${repositoryId}`));
+    fireEvent.press(getByTestId(`like-button-1${repositoryId}`));
 
     await actWait();
 
